@@ -1,0 +1,32 @@
+// Declare Variables
+  // Typography 
+  $font-size: 16px;
+  $font-stack: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+// Add custom fonts to the front of this stack 
+  $header-font: $font-stack;
+// Colors */
+  $text: #414141;
+// Primary text color 
+  $heading: #212121;
+// Heading text color 
+  $primary: #ab1016;
+  // Primary color
+  $secondary: #ab1016;
+  // Accent color
+  $tertiary: #2b2d42;
+  // Third color, etc. 
+  // Box Model & spacing 
+  $p-margin: 2rem;
+  // Margin for paragaphs 
+  $h-margin: 1rem;
+  // Margin for headings 
+  $grid-gap: .9375rem;
+  // Grid spacing 
+  $container-max-widths: (    
+    md: 720px,
+    lg: 960px,
+    xl: 1170px
+  );
+  //Grid Widths
+  $link-transition: opacity .2s ease-out;
+  // Link transitions

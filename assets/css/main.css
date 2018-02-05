@@ -1,0 +1,6 @@
+div {
+    text-align: center;
+}
+.container.grid-12-columns div {
+    background-color: #BADA55;
+}

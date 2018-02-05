@@ -1,0 +1,27 @@
+/* 
+CSS Framework - Name tbd
+Ver. 1
+2/5/2018
+Author: Chad Cartier
+Website: http://chadcartier.com
+github: 
+
+*************************
+* Import File Structure *
+*************************
+
+./includes/
+    -layout.scss
+    -typography.scss
+    -variables.scss    
+
+** To be reorganized at a later date **
+
+*/
+
+@import "includes/mixins/mixins";
+@import "includes/mixins/variables";
+@import "includes/typography";
+@import "includes/layout";
+@import "includes/ie";
+

@@ -1,0 +1,73 @@
+/*
+Internet Explorer Styles
+    This is the most elegant solution I could think of to counteract grid for ie10 + 11
+    commented with my reasoning below. Feel free to not support bad software. 
+*/
+// Grid System (Flexbox)
+.container.grid-12-columns,
+.container {
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) { display: flex; justify-content: center;  }
+    // Check to see if the browser is IE, and set display to flex and justify center    
+    flex: 0 1 auto;
+    flex-direction: row;
+    flex-wrap: wrap;   
+}
+[class*="col-"]{
+    flex: 1;      
+    flex-direction: row;
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) { margin-bottom: 1rem; }
+    // Give the columns a margin bottom to emulate the grid gap
+}
+@media only screen and (max-width : 767px){ [class*="col-"]{ max-width: 100%; }} // Reset column widths on mobile
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    // Set the column widths, only for IE
+    .col-1   { 
+        flex-basis:(100% / 12);
+        max-width:(100% / 12);
+    }
+    .col-2   { 
+        flex-basis:(100% / 6);
+        max-width:(100% / 6);
+    }
+    .col-3   { 
+        flex-basis:(100% / 4);
+        max-width:(100% / 4);
+    }
+    .col-4   { 
+        flex-basis:(100% / 3);
+        max-width:(100%/3);
+    }
+    .col-5   { 
+        flex-basis:(100% / 2.4);
+        max-width:(100%/2.4);
+     }
+    .col-6   { 
+        flex-basis:(100% / 2);
+        max-width:(100% / 2);
+    }
+    .col-7   { 
+        flex-basis:(100% / 1.714285714285714);
+        max-width:(100% / 1.714285714285714);
+    }
+    .col-8   { 
+        flex-basis:(100% / 1.5);
+        max-width:(100%/1.5);
+     }
+    .col-9   { 
+        flex-basis:(100% / 1.333333333333333);
+        max-width:(100% / 1.333333333333333);
+     }
+    .col-10  { 
+        flex-basis:(100% / 1.2);
+        max-width:(100%/1.2);
+    }
+    .col-11  { 
+        flex-basis:(100% / 1.090909090909091);
+        max-width:(100% / 1.090909090909091);
+    }
+    .col-12  { 
+        flex-basis:100%;
+        max-width: 100%;
+    }
+}   
+   

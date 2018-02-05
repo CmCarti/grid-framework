@@ -1,0 +1,273 @@
+/* 
+CSS Framework - Name tbd
+Ver. 1
+2/5/2018
+Author: Chad Cartier
+Website: http://chadcartier.com
+github: 
+
+*************************
+* Import File Structure *
+*************************
+
+./includes/
+    -layout.scss
+    -typography.scss
+    -variables.scss    
+
+** To be reorganized at a later date **
+
+*/
+/*  
+II. Typography
+Based on Bootstrap Typography:  https://v4-alpha.getbootstrap.com/content/typography/
+1. Document Font Size
+2. Headings
+3. Display Headings
+4. Paragraph 
+*/
+/* 
+1. Document Font Size and Family 
+*/
+html {
+  font-size: 16px; }
+
+body {
+  font-size: 1rem;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; }
+
+/* 
+2. Headings 
+	Sets the font weight, color, margin-bottom, and font-size of each heading
+*/
+h1, h2, h3, h4, h5, h6 {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-weight: 600;
+  color: #212121;
+  margin-bottom: 1rem; }
+
+h1 {
+  font-size: 2.5rem; }
+
+h2 {
+  font-size: 2rem; }
+
+h3 {
+  font-size: 1.75rem; }
+
+h4 {
+  font-size: 1.5rem; }
+
+h5 {
+  font-size: 1.25rem; }
+
+h6 {
+  font-size: 1rem; }
+
+/*
+3. Display Headings
+	Sets the font-size for .display headings
+	Bootstrap Typography sets the font-weight to 300 for reference.
+	Add this code if you'd like to mimic that: 
+	.display { font-weight: 300; } 
+*/
+.display {
+  font-size: 2.5rem; }
+
+h1.display {
+  font-size: 6rem; }
+
+h2.display {
+  font-size: 5.5rem; }
+
+h3.display {
+  font-size: 4.5rem; }
+
+h4.display {
+  font-size: 3.5rem; }
+
+/*
+4. Paragraphs
+	Sets the font-size, color, and more for paragraphs and other common text items
+*/
+p, ul, li, span, form, input, button, i {
+  font-size: 1rem;
+  color: #414141; }
+
+p, ul, li {
+  margin-bottom: 1rem; }
+
+/*
+5. Links
+	Styles for links
+*/
+a {
+  color: #ab1016;
+  transition: opacity 0.2s ease-out; }
+  a:hover {
+    color: #ab1016;
+    text-decoration: none;
+    opacity: .65; }
+
+/*
+III. Layout
+	Next generation grid system.
+	The basic idea is to have the elements within the container use a class to specify their grid column width.
+	There is a 12 columns grid container called container-12col. Cells within will have names like col-*. 
+	There are also common premade layouts. 
+1. Container
+2. Container Grid
+3. Common Layouts
+
+
+1. Container
+	Custom layouts may then be defined by the contents of the container in the custom stylesheet
+*/
+.container {
+  margin: auto;
+  padding: 1rem;
+  display: grid;
+  width: 100%;
+  grid-row-gap: 0.9375rem; }
+  @media only screen and (min-width: 768px) {
+    .container {
+      max-width: 720px; } }
+  @media only screen and (min-width: 992px) {
+    .container {
+      max-width: 960px; } }
+  @media only screen and (min-width: 1200px) {
+    .container {
+      max-width: 1170px; } }
+
+/*
+2. Container Grid
+	This acts like a bootstrap grid if needed for quick layout 
+*/
+.container.grid-12-columns {
+  display: block; }
+  @media only screen and (min-width: 768px) {
+    .container.grid-12-columns {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      grid-auto-flow: dense; }
+      .container.grid-12-columns .col-2 {
+        grid-column: span 2; }
+      .container.grid-12-columns .col-3 {
+        grid-column: span 3; }
+      .container.grid-12-columns .col-4 {
+        grid-column: span 4; }
+      .container.grid-12-columns .col-5 {
+        grid-column: span 5; }
+      .container.grid-12-columns .col-6 {
+        grid-column: span 6; }
+      .container.grid-12-columns .col-7 {
+        grid-column: span 7; }
+      .container.grid-12-columns .col-8 {
+        grid-column: span 8; }
+      .container.grid-12-columns .col-9 {
+        grid-column: span 9; }
+      .container.grid-12-columns .col-10 {
+        grid-column: span 10; }
+      .container.grid-12-columns .col-11 {
+        grid-column: span 11; }
+      .container.grid-12-columns .col-12 {
+        grid-column: span 12; } }
+  @media only screen and (min-width: 992px) {
+    .container.grid-12-columns {
+      grid-template-columns: repeat(12, 1fr); } }
+
+[class*="col-"] {
+  margin-bottom: 1rem;
+  padding-left: 0.46875rem;
+  padding-right: 0.46875rem; }
+  @media only screen and (min-width: 768px) {
+    [class*="col-"] {
+      margin: 0; } }
+
+/* 
+3. Common Layouts
+	These layouts can be accessed with their associated class
+*/
+.container.sidebar-content-layout {
+  grid-template-areas: "sidebar content content content"; }
+  .container.sidebar-content-layout .sidebar {
+    grid-area: sidebar; }
+  .container.sidebar-content-layout .content {
+    grid-area: content; }
+
+/*
+Internet Explorer Styles
+    This is the most elegant solution I could think of to counteract grid for ie10 + 11
+    commented with my reasoning below. Feel free to not support bad software. 
+*/
+.container.grid-12-columns,
+.container {
+  flex: 0 1 auto;
+  flex-direction: row;
+  flex-wrap: wrap; }
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    .container.grid-12-columns,
+    .container {
+      display: flex;
+      justify-content: center; } }
+
+[class*="col-"] {
+  flex: 1;
+  flex-direction: row; }
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    [class*="col-"] {
+      margin-bottom: 1rem; } }
+
+@media only screen and (max-width: 767px) {
+  [class*="col-"] {
+    max-width: 100%; } }
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .col-1 {
+    flex-basis: 8.33333%;
+    max-width: 8.33333%; }
+
+  .col-2 {
+    flex-basis: 16.66667%;
+    max-width: 16.66667%; }
+
+  .col-3 {
+    flex-basis: 25%;
+    max-width: 25%; }
+
+  .col-4 {
+    flex-basis: 33.33333%;
+    max-width: 33.33333%; }
+
+  .col-5 {
+    flex-basis: 41.66667%;
+    max-width: 41.66667%; }
+
+  .col-6 {
+    flex-basis: 50%;
+    max-width: 50%; }
+
+  .col-7 {
+    flex-basis: 58.33333%;
+    max-width: 58.33333%; }
+
+  .col-8 {
+    flex-basis: 66.66667%;
+    max-width: 66.66667%; }
+
+  .col-9 {
+    flex-basis: 75%;
+    max-width: 75%; }
+
+  .col-10 {
+    flex-basis: 83.33333%;
+    max-width: 83.33333%; }
+
+  .col-11 {
+    flex-basis: 91.66667%;
+    max-width: 91.66667%; }
+
+  .col-12 {
+    flex-basis: 100%;
+    max-width: 100%; } }
+
+/*# sourceMappingURL=framework.css.map */

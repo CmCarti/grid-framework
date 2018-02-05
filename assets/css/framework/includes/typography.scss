@@ -1,0 +1,72 @@
+
+/*  
+II. Typography
+Based on Bootstrap Typography:  https://v4-alpha.getbootstrap.com/content/typography/
+1. Document Font Size
+2. Headings
+3. Display Headings
+4. Paragraph 
+*/
+
+/* 
+1. Document Font Size and Family 
+*/
+html { font-size: 16px; }
+body { 
+	font-size: 1rem;
+	font-family: $font-stack; 
+}
+/* 
+2. Headings 
+	Sets the font weight, color, margin-bottom, and font-size of each heading
+*/
+h1, h2, h3, h4, h5, h6 {
+	font-family: $font-stack;
+	font-weight: 600;
+	color: $heading;
+	margin-bottom: $h-margin;
+}
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.75rem; }
+h4 { font-size: 1.5rem; }
+h5 { font-size: 1.25rem; }
+h6 { font-size: 1rem; }
+
+/*
+3. Display Headings
+	Sets the font-size for .display headings
+	Bootstrap Typography sets the font-weight to 300 for reference.
+	Add this code if you'd like to mimic that: 
+	.display { font-weight: 300; } 
+*/
+.display { font-size: 2.5rem; }
+h1.display { font-size: 6rem; }
+h2.display { font-size: 5.5rem; }
+h3.display { font-size: 4.5rem; }
+h4.display { font-size: 3.5rem; }
+
+/*
+4. Paragraphs
+	Sets the font-size, color, and more for paragraphs and other common text items
+*/
+p, ul, li, span, form, input, button, i {
+	font-size: 1rem;
+	color: $text;
+}
+p, ul, li { margin-bottom: 1rem; }
+
+/*
+5. Links
+	Styles for links
+*/
+a {
+	color: $secondary;
+	transition: $link-transition;
+	&:hover { 
+		color: $secondary;
+		text-decoration: none;
+		opacity: .65;
+	}
+}
+
